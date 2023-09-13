@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState} from "react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import ProductForm from "@/components/ProductForm";
 
 export default function EditProductPage() {
     const [productInfo, setProductInfo] = useState(null);
@@ -18,10 +19,10 @@ export default function EditProductPage() {
     }, [id]);
     return (
       <Layout>
-        <h1>Edit product</h1>
-        {productInfo && (
-          <productForm {...productInfo} />
-        )}
+        <h1>Edit Product</h1>
+          {productInfo && (
+            <ProductForm {...productInfo}/>
+          )}
       </Layout>
     );
   }
